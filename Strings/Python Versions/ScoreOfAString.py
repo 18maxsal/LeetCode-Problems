@@ -1,3 +1,5 @@
+# This problem is from LC: https://leetcode.com/problems/score-of-a-string/?envType=daily-question&envId=2024-06-01
+# Problem is Titled "3110. Score of a String"
 string = "hello"
 string_ascii = []
 for i in string: # Converting the given string into its ASCII values
