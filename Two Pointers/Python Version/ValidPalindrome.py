@@ -15,7 +15,7 @@ class Solution:
         right = len(letters) - 1
 
         while left < right: # Iterating through both ends of the array until they meet in the middle 
-            if letters[left] != letters[right]:
+            if letters[left] != letters[right]: # If there is a mismatch in the two indexes, then we simply retrun False
                 return False
             left += 1
             right -= 1
