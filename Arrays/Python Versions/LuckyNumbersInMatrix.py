@@ -3,30 +3,24 @@ from typing import List
 class Solution:
     def luckyNumbers (self, matrix: List[List[int]]) -> List[int]:
 
-        # ans = []
-        # rows_and_columns = [] # Follows the following ordering: [row, column]
-        # for i in range(len(matrix)):
-        #     row = []
-        #     column = []
-        #     for j in range(len(matrix)):
-        #         row.append(matrix[i][j])
-        #         column.append(matrix[j][i])
-        #     rows_and_columns.append([row, column])
+        # Used from the fact that there can be AT MOST only 1 lucky number,
+        # NOTE: look at editorial of this problem for more info
+        N, M = len(matrix), len(matrix[0]) # The dimensions of the matrix (M * N)
 
-        ans = []
-        nums_found = []
-        for i in range(len(matrix)):
-            row_min = []
-            column_max = []
-            for j in range(len(matrix)):
-                row_min.append(matrix[i][j])
-                column_max.append(matrix[j][i])
-            nums_found.append([min(row_min), max(column_max)])
-        
-        for i in nums_found:
-            if i[0] == i[1]:
-                ans.append(i[0])
-        return ans
+        r_min_max = float('-inf')
+        for i in range(N): # Gets the biggest number across all rows
+            r_min = min(matrix[i])  
+            r_min_max = max(r_min_max, r_min)
+
+        c_max_min = float('inf')
+        for i in range(M): # Gets the smallest number across all columns
+            c_max = max(matrix[j][i] for j in range(N))
+            c_max_min = min(c_max_min, c_max)
+
+        if r_min_max == c_max_min:
+            return [r_min_max]
+        else:
+            return []
     
     def is_lucky(self, row, column, num):
         if min(row) == num and max(column) == num:
