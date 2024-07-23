@@ -1,5 +1,6 @@
 # Problem Link: https://leetcode.com/problems/sort-array-by-increasing-frequency/description/?envType=daily-question&envId=2024-07-23
 
+from typing import List
 class Solution:
     def frequencySort(self, nums: List[int]) -> List[int]:
 
