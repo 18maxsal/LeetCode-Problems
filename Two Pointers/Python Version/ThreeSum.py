@@ -3,24 +3,29 @@
 from typing import List
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
-        start = 0
-        end = len(nums) - 1
-        curr_target = 0
+
+        ans = []
         nums.sort()
-        left = 0
-        right = len(nums) - 1
-        for i in range(len(nums)): # At this point it is essentially TwoSumII
-            pass
-    
-    def twoSumII(self, nums:List[int], toSkip: int, target: int):
-        left = 0
-        right = len(nums) - 1
-        while left < right:
-            if left != toSkip and right != toSkip:
-                if nums[left] + nums[right] == target:
-                    return [left, right]
-                
-                elif nums[left] + nums[right] > target:
+
+        for i, val in enumerate(nums):
+            if i > 0 and val == nums[i - 1]:
+                continue
+
+            left, right = i + 1, len(nums) - 1
+            while left < right:
+                threeSum = val + nums[left] + nums[right]
+                if threeSum > 0:
                     right -= 1
-                else:
+                elif threeSum < 0:
                     left += 1
+                else:
+                    ans.append([val, nums[left], nums[right]])
+                    left += 1
+                    while nums[left] == nums[left - 1] and left < right:
+                        left += 1
+        return ans
+
+nums = [-1,0,1,2,-1,-4]
+test = Solution()
+result = test.threeSum(nums)
+print("Result: ", result)
