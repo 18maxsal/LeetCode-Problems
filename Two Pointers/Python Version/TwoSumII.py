@@ -15,3 +15,9 @@ class Solution:
             else: # I.E. our resulting number is smaller than the target number, we can increase this number by 
                 # increasing the index of the start pointer by one 
                 start += 1
+
+numbers = [2,7,11,15]
+target = 9
+test = Solution()
+result = test.twoSum(numbers, target)
+print(result)
