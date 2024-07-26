@@ -12,7 +12,7 @@ class Solution:
                 continue
 
             left, right = i + 1, len(nums) - 1
-            while left < right:
+            while left < right: # From this point is essentially TwoPointerII
                 threeSum = val + nums[left] + nums[right]
                 if threeSum > 0:
                     right -= 1
@@ -21,7 +21,8 @@ class Solution:
                 else:
                     ans.append([val, nums[left], nums[right]])
                     left += 1
-                    while nums[left] == nums[left - 1] and left < right:
+                    
+                    while nums[left] == nums[left - 1] and left < right: # How to deal with repeating numbers
                         left += 1
         return ans
 
