@@ -19,3 +19,12 @@ class Solution:
         
         # 5. Return result and mod it by (10^9) + 7
         return ans  % mod
+
+# Example Use
+nums = [1,2,3,4]
+n = 4
+left = 1
+right = 5
+test = Solution()
+result = test.rangeSum(nums = nums, n = n, left = left, right = right)
+print(result)
