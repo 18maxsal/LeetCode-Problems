@@ -1,5 +1,6 @@
 # Problem Link: https://leetcode.com/problems/range-sum-of-sorted-subarray-sums/description/?envType=daily-question&envId=2024-08-04
 
+from typing import List
 class Solution:
     def rangeSum(self, nums: List[int], n: int, left: int, right: int) -> int:
         
