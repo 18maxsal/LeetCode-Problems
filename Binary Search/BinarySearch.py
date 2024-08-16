@@ -15,3 +15,11 @@ def binarysearch(arr, low, high, target):
             high = mid - 1
     
     return -1
+
+
+arr = [-1, 0, 3, 5, 9, 12]
+low = 0
+high = len(arr) - 1
+target = 9
+result = binarysearch(arr, low, high, target)
+print(result)
