@@ -20,9 +20,63 @@ class Solution:
         
         return counter >= n
 
-# flowerbed = [1,0,0,0,1]
-flowerbed = [1,0,0,0,1,0,0]
-n = 2
-test = Solution()
-result = test.canPlaceFlowers(flowerbed, n)
-print(result)
+    def canPlaceFlowers_Another_Solution(self, flowerbed, n):
+        counter = 0
+        for i in range(len(flowerbed)):
+            if i == 0  and i + 1 < len(flowerbed) and flowerbed[i + 1] == 0 and flowerbed[i] == 0:
+                flowerbed[i] = 1
+                counter += 1
+            elif i == len(flowerbed) - 1 and flowerbed[i - 1] == 0 and flowerbed[i] == 0:
+                flowerbed[i] = 1
+                counter += 1
+            elif flowerbed[i - 1] == 0 and flowerbed[i] == 0 and flowerbed[i + 1] == 0:
+                flowerbed[i] = 1
+                counter += 1
+            if counter >= n:
+                return True
+        return False
+
+
+def testOne(test: Solution):
+    flowerbed = [1,0,0,0,1]
+    n = 2
+    print(f"flowerbed from test one: {flowerbed}, n: {n}")
+    result = test.canPlaceFlowers(flowerbed, n)
+    # result = test.canPlaceFlowers_Another_Solution(flowerbed, n)
+    print("Result from test One: ", result)
+    if result:
+        print(f"Resulting flowerbed: {flowerbed}")
+    print("")
+
+def testTwo(test: Solution):
+    flowerbed = [1,0,0,0,1,0,0]
+    n = 2
+    print(f"flowerbed from test two: {flowerbed}, n: {n}")
+    result = test.canPlaceFlowers(flowerbed, n)
+    # result = test.canPlaceFlowers_Another_Solution(flowerbed, n)
+    print("Result: ", result)
+    if result:
+        print(f"Resulting flowerbed: {flowerbed}")
+    print("")
+
+
+def testThree(test: Solution):
+    flowerbed = [0,0,0,0,1]
+    n = 2
+    print(f"flowerbed from test three: {flowerbed}, n: {n}")
+    result = test.canPlaceFlowers(flowerbed, n)
+    # result = test.canPlaceFlowers_Another_Solution(flowerbed, n)
+    print("Result: ", result)
+    if result:
+        print(f"Resulting flowerbed: {flowerbed}")
+    print("")
+
+
+def main():
+    test = Solution()
+    testOne(test)
+    testTwo(test)
+    testThree(test)
+
+if __name__ == "__main__":
+    main()
