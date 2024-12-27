@@ -10,13 +10,13 @@ class Solution:
             runningProduct*=nums[i-1]
             prefixAndPostfixArray.append(runningProduct)
         runningProduct = 1
-        # print(prefixAndPostfixArray)
+        print(prefixAndPostfixArray)
 
         #Processing postfix array
         for i in range(len(nums)-1, -1, -1): # Traversing Array from right to left
             prefixAndPostfixArray[i]*=runningProduct
             runningProduct*=nums[i]
-        # print(prefixAndPostfixArray)
+        print(prefixAndPostfixArray)
         return prefixAndPostfixArray
     
 def testOne(test: Solution):
