@@ -13,7 +13,7 @@ class Solution:
                 right -= 1
         return best_area
     
-    def maxArea_Optimized(self, height: list[int]):
+    def maxArea_Optimized(self, height: list[int]): # This is a more optimized version of the solution
         left = 0
         right = len(height) - 1
         max_area = 0
