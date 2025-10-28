@@ -11,3 +11,15 @@
 pass
 ```
 > Time Complexity: ???
+
+# Optimized Intuition
+[Optimized Intuition for solving problem goes here]
+
+# Optimized Solution
+```Python
+pass
+```
+
+> Optimizd Time Complexity: ???
+
+
