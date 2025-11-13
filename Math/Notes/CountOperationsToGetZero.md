@@ -25,7 +25,13 @@ class Solution:
 > Time Complexity: O(min(num1, num2)) [NOTE: this time complexity was calculated by LeetCode Result page]
 
 # Optimized Intuition
-[Optimized Intuition for solving problem goes here]
+In this optimized solution, we will be following the *Euclidian Algorithm*.  The reason being 
+that when the we are working with a difference of the two numbers being very big, a lot of 
+repetitive and identical subtraction operations will be perfomed (this give us some room for
+optimization).  Basically what is happening here is while *num1* is greater than or 
+equal to *num2* we subtract *num1* from *num2* until *num1* is less than *num2*.  At this 
+point, *num1* represents *num1 mod num2*.  During this process, the number of operations that 
+we will do is reprented by *floor(num1 / num2)*.  
 
 # Optimized Solution
 ```Python
@@ -40,6 +46,11 @@ class Solution:
         return res
 ```
 
-> Optimizd Time Complexity: ???
+> Optimizd Time Complexity: O(log max(num1, num2))
+
+# Additional Resources
+
+- https://www.youtube.com/watch?v=Jwf6ncRmhPg
+- https://www.khanacademy.org/computing/computer-science/cryptography/modarithmetic/a/the-euclidean-algorithm
 
 
